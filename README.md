@@ -56,3 +56,6 @@ This confirmed that both primary data sources were successfully being collected 
 ### Evidence
 
 The screenshot below demonstrates successful ingestion of both Sysmon and Windows Security telemetry into Splunk.
+
+![Splunk log ingestion showing Sysmon and Windows Security events](01-splunk-log-ingestion.png)
+
