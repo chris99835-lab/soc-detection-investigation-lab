@@ -116,3 +116,12 @@ index=main source="WinEventLog:Security" EventCode=4625
 ### Result
 
 The detection provides visibility into repeated failed authentication attempts and can help SOC analysts identify accounts or systems experiencing suspicious login activity.
+### Alerting
+
+I converted the detection into a scheduled Splunk alert that automatically checks for repeated failed-login activity. The alert was configured to run every 5 minutes and review the previous 60 minutes of Windows Security logs.
+
+### Detection Evidence
+
+The alert successfully triggered during testing, confirming that the failed-login detection and automated alerting workflow were functioning correctly.
+
+![Repeated failed login alert triggered](04-failed-login-alert.png)
