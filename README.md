@@ -81,3 +81,14 @@ index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
 The SPL detection successfully identified PowerShell activity matching the suspicious command-line criteria.
 
 ![Suspicious PowerShell detection in Splunk](02-powershell-detection.png)
+
+### Automated Alert
+
+After validating the detection logic, I converted the SPL search into a scheduled Splunk alert. The alert was configured to trigger when matching suspicious activity was detected.
+
+I then generated controlled test activity and verified that Splunk successfully triggered the alert. This demonstrated the complete detection workflow from endpoint telemetry collection to automated SOC alerting.
+### Alert Evidence
+
+The triggered alert confirmed that the detection was operational and could automatically surface matching activity for analyst review.
+
+![Triggered Splunk PowerShell alert](03-powershell-alert-triggered.png)
