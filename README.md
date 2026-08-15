@@ -1,12 +1,12 @@
 # SOC Detection & Investigation Home Lab
 
-## Overview
+## Project Overview
 
-This project documents a hands-on Security Operations Center (SOC) home lab built to practice endpoint monitoring, log analysis, threat detection, investigation, and alerting.
+This project documents a hands-on Security Operations Center (SOC) home lab built to practice security monitoring, detection engineering, and incident investigation using Splunk Enterprise, Sysmon, and Windows Security logs.
 
-I configured a Windows 11 virtual machine as a monitored endpoint, deployed Sysmon for enhanced endpoint telemetry, and ingested Sysmon and Windows Security logs into Splunk Enterprise.
+I configured a Windows 11 virtual machine as a monitored endpoint and used Splunk Enterprise as a SIEM to collect and analyze endpoint telemetry.
 
-Using Splunk Search Processing Language (SPL), I investigated Windows activity, analyzed authentication failures, examined process execution and parent-child relationships, reviewed DNS and file activity, and created automated alerts for suspicious behavior.
+I investigated multiple security scenarios, including suspicious PowerShell execution, repeated failed login attempts, and DNS activity. I also created and tested Splunk alerts to simulate how a SOC analyst detects and investigates suspicious activity.
 
 ## Lab Environment
 
