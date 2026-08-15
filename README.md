@@ -74,8 +74,12 @@ This demonstrated how endpoint process telemetry can be used during SOC triage t
 ### Detection Logic
 
 ```spl
-index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 Image="*powershell.exe"
-``` 
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+Image="*powershell.exe"
+(CommandLine="*-NoProfile*" OR CommandLine="*-EncodedCommand*" OR CommandLine="*Start-Process*" OR CommandLine="*DownloadString*" OR CommandLine="*Invoke-WebRequest*")
+| table _time ComputerName User ParentImage ParentProcessId Image ProcessId CommandLine
+| sort - _time
+```
 ### Detection Evidence
 
 The SPL detection successfully identified PowerShell activity matching the suspicious command-line criteria.
