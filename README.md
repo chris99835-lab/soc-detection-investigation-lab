@@ -59,3 +59,19 @@ The screenshot below demonstrates successful ingestion of both Sysmon and Window
 
 ![Splunk log ingestion showing Sysmon and Windows Security events](01-splunk-log-ingestion.png)
 
+## Detection 1: Suspicious PowerShell Activity
+
+### Objective
+
+Identify and investigate potentially suspicious PowerShell execution using Sysmon process creation telemetry.
+
+### Investigation
+
+I used Sysmon Event ID 1 data in Splunk to analyze PowerShell process execution. The investigation focused on process details such as the executing user, process image, command line, process ID, and parent process information.
+
+This demonstrated how endpoint process telemetry can be used during SOC triage to identify and investigate potentially suspicious command-line activity.
+
+### Detection Logic
+
+```spl
+index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 Image="*powershell.exe"
