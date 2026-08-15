@@ -92,3 +92,27 @@ I then generated controlled test activity and verified that Splunk successfully 
 The triggered alert confirmed that the detection was operational and could automatically surface matching activity for analyst review.
 
 ![Triggered Splunk PowerShell alert](03-powershell-alert-triggered.png)
+
+## Detection 2: Repeated Failed Login Attempts
+
+### Objective
+
+Detect repeated Windows authentication failures that could indicate password guessing, brute-force activity, or unauthorized access attempts.
+
+### Investigation
+
+I analyzed Windows Security logs in Splunk using Event ID 4625, which records failed logon attempts. The investigation focused on identifying the affected account, source address, endpoint, and number of authentication failures.
+
+By aggregating failed logon events, I was able to identify repeated authentication failures and create detection logic that could automatically alert an analyst when this activity occurred.
+
+### Detection Logic
+
+```spl
+index=main source="WinEventLog:Security" EventCode=4625
+| stats count by Account_Name Source_Network_Address ComputerName
+| sort - count
+```
+
+### Result
+
+The detection provides visibility into repeated failed authentication attempts and can help SOC analysts identify accounts or systems experiencing suspicious login activity.
