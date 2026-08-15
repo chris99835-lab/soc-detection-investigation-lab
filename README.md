@@ -157,3 +157,25 @@ Splunk successfully returned DNS telemetry from the monitored endpoint, allowing
 Splunk returned 45 DNS events during the investigation, providing visibility into DNS queries, their results, and the processes responsible for generating them.
 
 ![Sysmon DNS activity investigation in Splunk](05-dns-activity-investigation.png)
+---
+
+## SOC Investigation Summary
+
+This home lab demonstrates a complete security monitoring workflow using Windows endpoint telemetry and Splunk Enterprise.
+
+Throughout the project, I:
+
+- Configured Sysmon to collect detailed endpoint telemetry
+- Ingested Sysmon and Windows Security logs into Splunk
+- Used SPL to search and analyze security events
+- Investigated suspicious PowerShell process execution
+- Monitored repeated Windows authentication failures
+- Analyzed DNS activity using Sysmon Event ID 22
+- Created and validated automated Splunk alerts
+- Reviewed triggered alerts to simulate SOC analyst triage
+
+## Key Takeaways
+
+This project strengthened my understanding of how endpoint telemetry is collected, searched, investigated, and converted into actionable detections within a SIEM.
+
+Rather than only reviewing individual logs, I practiced the full workflow of identifying relevant telemetry, developing detection logic, validating results, and documenting evidence for further investigation.
