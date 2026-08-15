@@ -151,3 +151,9 @@ index=main source="WinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=2
 ### Result
 
 Splunk successfully returned DNS telemetry from the monitored endpoint, allowing DNS requests to be correlated with the processes responsible for generating them.
+
+### Investigation Evidence
+
+Splunk returned 45 DNS events during the investigation, providing visibility into DNS queries, their results, and the processes responsible for generating them.
+
+![Sysmon DNS activity investigation in Splunk](05-dns-activity-investigation.png)
