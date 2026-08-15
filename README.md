@@ -179,3 +179,24 @@ Throughout the project, I:
 This project strengthened my understanding of how endpoint telemetry is collected, searched, investigated, and converted into actionable detections within a SIEM.
 
 Rather than only reviewing individual logs, I practiced the full workflow of identifying relevant telemetry, developing detection logic, validating results, and documenting evidence for further investigation.
+---
+
+## Tools & Technologies
+
+| Technology | Purpose |
+|---|---|
+| Splunk Enterprise | SIEM log ingestion, searching, investigation, and alerting |
+| Splunk Search Processing Language (SPL) | Detection queries and security event analysis |
+| Sysmon | Windows endpoint process and DNS telemetry |
+| Windows Security Event Logs | Authentication and security monitoring |
+| Windows 11 | Monitored endpoint |
+| VMware | Virtualized lab environment |
+| GitHub | Project documentation and evidence |
+## MITRE ATT&CK Mapping
+
+The lab investigations can be related to the following MITRE ATT&CK techniques:
+
+| Investigation | MITRE ATT&CK Technique |
+|---|---|
+| Suspicious PowerShell Execution | T1059.001 - PowerShell |
+| Repeated Failed Login Attempts | T1110 - Brute Force |
